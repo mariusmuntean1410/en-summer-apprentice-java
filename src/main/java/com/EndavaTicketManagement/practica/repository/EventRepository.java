@@ -1,5 +1,5 @@
 package com.EndavaTicketManagement.practica.repository;
-import com.EndavaTicketManagement.practica.repository.model.Event;
+import com.EndavaTicketManagement.practica.repository.modelDBO.Event;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,7 @@ public class EventRepository {
     public EventRepository() {
         System.out.println("Creating EventsRepository");
         events = new ArrayList<>();
-        events.add(new Event(100));
-        events.add(new Event(101));
+
     }
 
     public List<Event> getEvents(){

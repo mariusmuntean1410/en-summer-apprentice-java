@@ -1,12 +1,6 @@
 package com.EndavaTicketManagement.practica.controller;
-import com.EndavaTicketManagement.practica.repository.model.Event;
 import com.EndavaTicketManagement.practica.service.EventService;
 import org.springframework.web.bind.annotation.RestController;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.List;
 
 
 @RestController
