@@ -1,4 +1,4 @@
-package com.EndavaTicketManagement.practica.repository.modelDBO;
+package com.EndavaTicketManagement.practica.repository.model;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,41 @@
 package com.EndavaTicketManagement.practica.controller;
 
-public class OrderController {
-}
+import com.EndavaTicketManagement.practica.service.OrderService;
+import com.EndavaTicketManagement.practica.service.modelDTO.OrderDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+@RestController
+
+    @RequestMapping("/order")
+
+    public class OrderController {
+        private OrderService orderService;
+
+        @Autowired
+        OrderController(OrderService orderService) {
+            this.orderService = orderService;
+        }
+
+        @RequestMapping(value = "/find/{numberOfTickets}", method = RequestMethod.GET)
+        public OrderDto findByNumberOfTickets(@PathVariable int numberOfTickets){
+            return orderService.findByNumberOfTickets(numberOfTickets);
+        }
+
+        @RequestMapping(value = "/all",
+                produces = {"application/json"},
+                consumes = {"application/json"},
+                method = RequestMethod.GET)
+        public List<OrderDto> getOrders() {
+
+            return orderService.getOrders();
+        }
+
+
+    }
+
+

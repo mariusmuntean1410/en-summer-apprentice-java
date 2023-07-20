@@ -1,20 +1,53 @@
 package com.EndavaTicketManagement.practica.repository.model;
 
+import jakarta.persistence.*;
 
-public class Customer {
-    private String customerId;
+import java.io.Serializable;
 
-    public Customer(String customerId) {
+@Entity
+@Table(name = "Customer")
+
+public class Customer implements Serializable {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private int customerId;
+
+
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "email", unique = true)
+    private String email;
+
+
+  public int getCustomerId() {
+      return customerId;
+  }
+
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
-        System.out.println("Creating Customer");
+    }
+    public String getName() {
+        return name;
     }
 
-    public String getCustomersId() {
-        return customerId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{customerId='" + customerId + "'}";
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Customer() {
+
     }
 }
