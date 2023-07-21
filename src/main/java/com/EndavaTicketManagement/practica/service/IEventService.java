@@ -1,5 +1,6 @@
 package com.EndavaTicketManagement.practica.service;
-
+import com.EndavaTicketManagement.practica.repository.model.EventType;
+import com.EndavaTicketManagement.practica.repository.model.Venue;
 import com.EndavaTicketManagement.practica.service.modelDTO.EventDto;
 import org.springframework.stereotype.Component;
 

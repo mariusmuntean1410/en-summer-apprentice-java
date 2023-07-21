@@ -2,15 +2,17 @@ package com.EndavaTicketManagement.practica.repository.model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Entity
 @Table(name = "Event")
+
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +20,12 @@ public class Event implements Serializable {
 
 
 
-    @JsonBackReference
-    @ManyToOne(fetch=FetchType.LAZY)
+    @JsonManagedReference
+    @ManyToOne
     @JoinColumn(name = "eventTypeID")
     private EventType eventType;
-    @JsonBackReference
-    @ManyToOne(fetch=FetchType.LAZY)
+    @JsonManagedReference
+    @ManyToOne
     @JoinColumn(name = "venueID")
     private Venue venue;
 

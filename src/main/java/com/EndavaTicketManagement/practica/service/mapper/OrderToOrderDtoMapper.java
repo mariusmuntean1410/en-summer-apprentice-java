@@ -9,8 +9,8 @@ public class OrderToOrderDtoMapper {
         orderDto.setOrderedAt(order.getOrderedAt());
         orderDto.setNumberOfTickets(order.getNumberOfTickets());
         orderDto.setTotalPrice(order.getTotalPrice());
-     /* orderDto.setCustomer(order.getCustomer());
-        orderDto.setTicketCategory(order.getTicketCategory());*/
+        orderDto.setCustomerId(order.getCustomer().getCustomerId());
+        orderDto.setTicketCategoryId(order.getTicketCategory().getTicketCategoryId());
 
         return orderDto;
 

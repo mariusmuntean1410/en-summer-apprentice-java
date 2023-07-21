@@ -1,6 +1,7 @@
 package com.EndavaTicketManagement.practica.repository.model;
 
 
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -15,12 +16,12 @@ public class Order implements Serializable {
     private int orderId;
 
     @JsonManagedReference
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "customerID")
+    @ManyToOne
+    @JoinColumn(name = "customerID" , nullable = false)
     private Customer customer;
     @JsonManagedReference
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name = "ticketCategoryID")
+    @ManyToOne
+    @JoinColumn(name = "ticketCategoryID", nullable = false)
     private TicketCategory ticketCategory;
   @Column(name = "orderedAt")
   private LocalDateTime orderedAt;
@@ -36,19 +37,19 @@ public class Order implements Serializable {
         this.orderId = orderId;
     }
 
-    public Customer getCustomerId() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomerId(Customer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public TicketCategory getTicketCategoryId() {
+    public TicketCategory getTicketCategory() {
         return ticketCategory;
     }
 
-    public void setTicketCategoryId(TicketCategory ticketCategory) {
+    public void setTicketCategory(TicketCategory ticketCategory) {
         this.ticketCategory = ticketCategory;
     }
 

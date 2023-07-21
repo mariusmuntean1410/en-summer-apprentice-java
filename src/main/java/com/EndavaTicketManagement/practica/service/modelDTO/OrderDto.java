@@ -11,10 +11,10 @@ public class OrderDto {
     private int orderId;
 
 
-    private Customer customer;
+    private int customerId;
 
 
-    private TicketCategory ticketCategory;
+    private int ticketCategoryId;
 
 
 
@@ -38,20 +38,20 @@ public class OrderDto {
     }
 
 
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public TicketCategory getTicketCategory() {
-        return ticketCategory;
+    public int getTicketCategoryId() {
+        return ticketCategoryId;
     }
 
-    public void setTicketCategory(TicketCategory ticketCategory) {
-        this.ticketCategory = ticketCategory;
+    public void setTicketCategoryId(int ticketCategoryId) {
+        this.ticketCategoryId = ticketCategoryId;
     }
 
     public int getNumberOfTickets() {
@@ -78,13 +78,13 @@ public class OrderDto {
         this.totalPrice = totalPrice;
     }
 
-    public OrderDto(int orderId, Customer customer, TicketCategory ticketCategory,
+    public OrderDto(int orderId, Customer customerId, TicketCategory ticketCategoryId,
                     int numberOfTickets, LocalDateTime orderedAt, double totalPrice) {
         this.orderId = orderId;
-        this.customer = customer;
-        this.ticketCategory = ticketCategory;
         this.numberOfTickets = numberOfTickets;
         this.orderedAt = orderedAt;
         this.totalPrice = totalPrice;
     }
+
+
 }

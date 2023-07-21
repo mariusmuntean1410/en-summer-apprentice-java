@@ -2,9 +2,12 @@ package com.EndavaTicketManagement.practica.controller;
 import com.EndavaTicketManagement.practica.service.EventService;
 import com.EndavaTicketManagement.practica.service.modelDTO.EventDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -19,13 +22,15 @@ public class EventController {
         System.out.println("Creating Events Controller");
     }
 
-    @RequestMapping(value = "/find/{eventName}", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/find/{eventName}", method = RequestMethod.GET)
     public EventDto findByEventName(@PathVariable String eventName){
         return eventsService.findByEventName(eventName);
-    }
+    }*/
 
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     public List<EventDto> getEvents(){
         return eventsService.getEvents();
     }
+
+
 }

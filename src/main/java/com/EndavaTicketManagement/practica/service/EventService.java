@@ -1,5 +1,8 @@
 package com.EndavaTicketManagement.practica.service;
 import com.EndavaTicketManagement.practica.repository.EventRepository;
+import com.EndavaTicketManagement.practica.repository.model.Event;
+import com.EndavaTicketManagement.practica.repository.model.EventType;
+import com.EndavaTicketManagement.practica.repository.model.Venue;
 import com.EndavaTicketManagement.practica.service.mapper.EventToEventDtoMapper;
 import com.EndavaTicketManagement.practica.service.modelDTO.EventDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +34,11 @@ public class EventService implements IEventService {
     public List<EventDto> getEvents() {
         return eventRepository.findAll().stream().map(EventToEventDtoMapper::convert).collect(Collectors.toList());
     }
+
+
+
+
+
+
 }
 

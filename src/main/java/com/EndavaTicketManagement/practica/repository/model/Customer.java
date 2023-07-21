@@ -1,8 +1,11 @@
 package com.EndavaTicketManagement.practica.repository.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Customer")
@@ -48,6 +51,7 @@ public class Customer implements Serializable {
     }
 
     public Customer() {
-
     }
+
+
 }

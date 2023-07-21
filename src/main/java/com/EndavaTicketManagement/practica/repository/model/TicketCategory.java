@@ -10,19 +10,18 @@ import java.util.List;
 
 @Entity
 @Table(name = "TicketCategory")
+
 public class TicketCategory implements Serializable {
     @Id
     private int ticketCategoryId;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "eventID")
     private EventType eventType;
-  @Column(name ="description")
+     @Column(name ="description")
     private String description;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "ticketCategory",cascade = CascadeType.ALL)
-    private List<Order> orderList = new ArrayList<>();
+
 
     public int getTicketCategoryId() {
         return ticketCategoryId;
@@ -60,5 +59,6 @@ public class TicketCategory implements Serializable {
     private double price;
     public TicketCategory() {
     }
+
 }
 

@@ -31,7 +31,7 @@ public class EventDto {
     }
 
     public void setEventDescription(String eventDescription) {
-        eventDescription = eventDescription;
+        this.eventDescription = eventDescription;
     }
 
     private String eventName;
