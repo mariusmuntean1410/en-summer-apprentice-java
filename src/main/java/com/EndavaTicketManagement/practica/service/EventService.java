@@ -7,7 +7,10 @@ import com.EndavaTicketManagement.practica.service.mapper.EventToEventDtoMapper;
 import com.EndavaTicketManagement.practica.service.modelDTO.EventDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 
@@ -38,7 +41,13 @@ public class EventService implements IEventService {
 
 
 
+    }
 
 
-}
+
+
+
+
+
+
 

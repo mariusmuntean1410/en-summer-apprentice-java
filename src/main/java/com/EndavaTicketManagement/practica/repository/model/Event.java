@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -23,11 +24,11 @@ public class Event implements Serializable {
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "eventTypeID")
-    private EventType eventType;
+    private EventType eventTypeId;
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "venueID")
-    private Venue venue;
+    private Venue venueId;
 
 
 
@@ -46,6 +47,8 @@ private String eventName;
      private String eventDescription;
 
 
+
+
     public int getEventId() {
         return eventId;
     }
@@ -54,11 +57,11 @@ private String eventName;
         this.eventId = eventsId;
     }
 
-    public String getName() {
+    public String getEventName() {
         return eventName;
     }
 
-    public void setName(String name) {
+    public void setEventName(String eventName) {
         this.eventName = eventName;
     }
 
@@ -78,19 +81,19 @@ private String eventName;
         this.startDate = startDate;
     }
     public EventType getEventTypeId() {
-        return eventType;
+        return eventTypeId;
     }
 
     public void setEventTypeId(EventType eventType) {
-        this.eventType = eventType;
+        this.eventTypeId = eventTypeId;
     }
 
     public Venue getVenueId() {
-        return venue;
+        return venueId;
     }
 
-    public void setVenueId(Venue venue) {
-        this.venue = venue;
+    public void setVenueId(Venue venueId) {
+        this.venueId = venueId;
     }
 
     public String getEventDescription() {
@@ -103,6 +106,18 @@ private String eventName;
     public Event() {
 
     }
+
+    public List<TicketCategory> getTicketCategories() {
+        return ticketCategories;
+    }
+
+    public void setTicketCategories(List<TicketCategory> ticketCategories) {
+        this.ticketCategories = ticketCategories;
+    }
+
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+    private List<TicketCategory> ticketCategories;
+
 
 }
 

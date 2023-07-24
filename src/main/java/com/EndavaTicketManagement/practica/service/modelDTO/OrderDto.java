@@ -20,6 +20,15 @@ public class OrderDto {
 
     private int numberOfTickets;
 
+    public int getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
+    }
+
+    private int eventId;
 
     private LocalDateTime orderedAt;
 
@@ -85,6 +94,7 @@ public class OrderDto {
         this.orderedAt = orderedAt;
         this.totalPrice = totalPrice;
     }
+
 
 
 }

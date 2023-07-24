@@ -1,12 +1,10 @@
 package com.EndavaTicketManagement.practica.repository.model;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.EndavaTicketManagement.practica.service.modelDTO.TicketCategoryDto;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "TicketCategory")
@@ -17,7 +15,7 @@ public class TicketCategory implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "eventID")
-    private EventType eventType;
+    private Event event;
      @Column(name ="description")
     private String description;
 
@@ -27,16 +25,16 @@ public class TicketCategory implements Serializable {
         return ticketCategoryId;
     }
 
-    public void setTicketCategoryId(int ticketCategoryId) {
+        public void setTicketCategoryId(int ticketCategoryId) {
         this.ticketCategoryId = ticketCategoryId;
     }
 
-    public EventType getEventType() {
-        return eventType;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setEventType(EventType eventType) {
-        this.eventType = eventType;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     public String getDescription() {
@@ -59,6 +57,7 @@ public class TicketCategory implements Serializable {
     private double price;
     public TicketCategory() {
     }
+
 
 }
 

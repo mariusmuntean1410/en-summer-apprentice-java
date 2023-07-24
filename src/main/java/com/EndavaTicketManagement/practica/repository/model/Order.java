@@ -17,11 +17,11 @@ public class Order implements Serializable {
 
     @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "customerID" , nullable = false)
+    @JoinColumn(name = "customerID")
     private Customer customer;
     @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "ticketCategoryID", nullable = false)
+    @JoinColumn(name = "ticketCategoryID")
     private TicketCategory ticketCategory;
   @Column(name = "orderedAt")
   private LocalDateTime orderedAt;
@@ -83,4 +83,7 @@ public class Order implements Serializable {
 
     public Order() {
     }
+
+
+
 }

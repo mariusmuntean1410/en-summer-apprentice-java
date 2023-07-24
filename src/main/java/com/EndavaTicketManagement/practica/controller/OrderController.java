@@ -33,5 +33,11 @@ import java.util.List;
 
         return orderService.getOrders();
     }
+    @PostMapping(value = "/create", produces = {"application/json"},
+            consumes = {"application/json"})
+    public ResponseEntity<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
+        OrderDto createdOrder = orderService.createOrder(orderDto);
+        return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
+    }
+    }
 
-}

@@ -8,7 +8,7 @@ public class EventToEventDtoMapper {
         EventDto eventDto = new EventDto();
         eventDto.setEventId(event.getEventId());
         eventDto.setEventDescription(event.getEventDescription());
-        eventDto.setEventName(event.getName());
+        eventDto.setEventName(event.getEventName());
         eventDto.setStartDate(event.getStartDate());
         eventDto.setEndDate(event.getEndDate());
         eventDto.setVenue(event.getVenueId());
