@@ -10,5 +10,5 @@ import java.util.List;
 public interface IEventService {
     public EventDto findByEventName(String name);
     public List<EventDto> getEvents();
-
+    public List<EventDto> getEventByVenueIdAndEventType(int venueId, String name);
 }

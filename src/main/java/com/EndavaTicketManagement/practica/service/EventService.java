@@ -38,7 +38,10 @@ public class EventService implements IEventService {
         return eventRepository.findAll().stream().map(EventToEventDtoMapper::convert).collect(Collectors.toList());
     }
 
-
+    @Override
+    public List<EventDto> getEventByVenueIdAndEventType(int venueId, String name) {
+        return eventRepository.findAllByVenue_VenueIdAndEventType_Name(venueId, name).stream().map(EventToEventDtoMapper::convert).collect(Collectors.toList());
+    }
 
 
     }

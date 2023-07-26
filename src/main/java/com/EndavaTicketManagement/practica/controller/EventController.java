@@ -32,11 +32,16 @@ public class EventController {
     }
 
     @RequestMapping(value = "/all",method = RequestMethod.GET)
-    public List<EventDto> getEvents(){
+    public List<EventDto> getEvents() {
         return eventsService.getEvents();
 
     }
-
+    @GetMapping(value= "/specific" ,produces = {"application/json"},
+            consumes = {"application/json"})
+    public List<EventDto> findByVenueIdAndEventType(@RequestParam int venueId, @RequestParam String eventType){
+        System.out.println("Request event/" + venueId + ' ' + eventType);
+        return eventsService.getEventByVenueIdAndEventType(venueId, eventType);
+    }
 
 
 

@@ -24,11 +24,11 @@ public class Event implements Serializable {
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "eventTypeID")
-    private EventType eventTypeId;
+    private EventType eventType;
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "venueID")
-    private Venue venueId;
+    private Venue venue;
 
 
 
@@ -53,8 +53,8 @@ private String eventName;
         return eventId;
     }
 
-    public void setEventId(int eventsId) {
-        this.eventId = eventsId;
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public String getEventName() {
@@ -81,19 +81,19 @@ private String eventName;
         this.startDate = startDate;
     }
     public EventType getEventTypeId() {
-        return eventTypeId;
+        return eventType;
     }
 
     public void setEventTypeId(EventType eventType) {
-        this.eventTypeId = eventTypeId;
+        this.eventType = eventType;
     }
 
     public Venue getVenueId() {
-        return venueId;
+        return venue;
     }
 
     public void setVenueId(Venue venueId) {
-        this.venueId = venueId;
+        this.venue = venue;
     }
 
     public String getEventDescription() {
