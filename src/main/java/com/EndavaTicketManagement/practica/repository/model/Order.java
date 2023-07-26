@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "Orders")
@@ -24,7 +25,7 @@ public class Order implements Serializable {
     @JoinColumn(name = "ticketCategoryID")
     private TicketCategory ticketCategory;
   @Column(name = "orderedAt")
-  private LocalDateTime orderedAt;
+  private Date orderedAt;
 
   @Column(name = "numberOfTickets")
   private int numberOfTickets;
@@ -53,11 +54,11 @@ public class Order implements Serializable {
         this.ticketCategory = ticketCategory;
     }
 
-    public LocalDateTime getOrderedAt() {
+    public  Date getOrderedAt() {
         return orderedAt;
     }
 
-    public void setOrderedAt(LocalDateTime orderedAt) {
+    public void setOrderedAt(Date orderedAt) {
         this.orderedAt = orderedAt;
     }
 

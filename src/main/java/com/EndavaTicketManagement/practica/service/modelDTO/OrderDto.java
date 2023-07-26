@@ -5,6 +5,8 @@ import com.EndavaTicketManagement.practica.repository.model.TicketCategory;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+
 @JsonSerialize
 public class OrderDto {
 
@@ -30,7 +32,7 @@ public class OrderDto {
 
     private int eventId;
 
-    private LocalDateTime orderedAt;
+    private Date orderedAt;
 
     private double totalPrice;
 
@@ -71,11 +73,11 @@ public class OrderDto {
         this.numberOfTickets = numberOfTickets;
     }
 
-    public LocalDateTime getOrderedAt() {
+    public Date getOrderedAt() {
         return orderedAt;
     }
 
-    public void setOrderedAt(LocalDateTime orderedAt) {
+    public void setOrderedAt(Date orderedAt) {
         this.orderedAt = orderedAt;
     }
 
@@ -88,7 +90,7 @@ public class OrderDto {
     }
 
     public OrderDto(int orderId, Customer customerId, TicketCategory ticketCategoryId,
-                    int numberOfTickets, LocalDateTime orderedAt, double totalPrice) {
+                    int numberOfTickets, Date orderedAt, double totalPrice) {
         this.orderId = orderId;
         this.numberOfTickets = numberOfTickets;
         this.orderedAt = orderedAt;

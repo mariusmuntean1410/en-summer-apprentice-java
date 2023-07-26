@@ -11,6 +11,8 @@ import com.EndavaTicketManagement.practica.service.modelDTO.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
@@ -42,8 +44,8 @@ public class OrderService implements IOrderService {
     }
     @Override
     public OrderDto createOrder(OrderDto orderDto) {
-        Customer customer = customerRepository.findById(2L).orElse(null);
-
+        Customer customer = new Customer();
+          customer.setCustomerId(6);
 
         if (customer == null) {
 
@@ -67,7 +69,7 @@ public class OrderService implements IOrderService {
         double ticketPrice = ticketCategory.getPrice();
         double totalPrice = ticketPrice * orderDto.getNumberOfTickets();
         order.setTotalPrice((float) totalPrice);
-
+        order.setOrderedAt(new Date());
         Order savedOrder = orderRepository.save(order);
 
 
