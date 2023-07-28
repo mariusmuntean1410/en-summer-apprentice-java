@@ -2,7 +2,6 @@ package com.EndavaTicketManagement.practica.service.modelDTO;
 
 public class TicketCategoryDto {
     private int ticketCategoryId;
-    private int eventId;
     private String description;
     private double price;
 
@@ -17,13 +16,7 @@ public class TicketCategoryDto {
         this.ticketCategoryId = ticketCategoryId;
     }
 
-    public int getEventId() {
-        return eventId;
-    }
 
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
-    }
 
     public String getDescription() {
         return description;

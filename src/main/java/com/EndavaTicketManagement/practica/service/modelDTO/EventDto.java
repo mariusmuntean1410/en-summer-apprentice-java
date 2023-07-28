@@ -5,6 +5,8 @@ import com.EndavaTicketManagement.practica.repository.model.Venue;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @JsonSerialize
 public class EventDto {
 
@@ -13,6 +15,15 @@ public class EventDto {
 
     private EventType eventType;
 
+    public List<TicketCategoryDto> getTicketCategories() {
+        return ticketCategories;
+    }
+
+    public void setTicketCategories(List<TicketCategoryDto> ticketCategories) {
+        this.ticketCategories = ticketCategories;
+    }
+
+    private List<TicketCategoryDto> ticketCategories;
     public EventDto() {
 
     }
@@ -90,7 +101,7 @@ public class EventDto {
 
 
     public EventDto(int eventId,Venue venue, EventType eventType, String eventName, LocalDateTime startDate
-            , LocalDateTime endDate, String eventDescription) {
+            , LocalDateTime endDate, String eventDescription, List<TicketCategoryDto> ticketCategories) {
         this.eventId = eventId;
         this.venue = venue;
         this.eventType = eventType;
@@ -98,6 +109,7 @@ public class EventDto {
         this.startDate = startDate;
         this.endDate = endDate;
         this.eventDescription = eventDescription;
+        this.ticketCategories = ticketCategories;
 
     }
 }
