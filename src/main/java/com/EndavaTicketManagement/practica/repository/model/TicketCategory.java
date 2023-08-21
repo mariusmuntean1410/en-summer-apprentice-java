@@ -15,7 +15,7 @@ public class TicketCategory implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "eventID")
-    private Event event;
+    private Event eventId;
      @Column(name ="description")
     private String description;
 
@@ -30,11 +30,11 @@ public class TicketCategory implements Serializable {
     }
 
     public Event getEvent() {
-        return event;
+        return eventId;
     }
 
-    public void setEvent(Event event) {
-        this.event = event;
+    public void setEvent(Event eventId) {
+        this.eventId = eventId;
     }
 
     public String getDescription() {

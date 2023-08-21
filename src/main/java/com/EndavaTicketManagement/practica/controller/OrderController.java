@@ -1,6 +1,8 @@
 package com.EndavaTicketManagement.practica.controller;
 
 import com.EndavaTicketManagement.practica.service.OrderService;
+import com.EndavaTicketManagement.practica.service.modelDTO.CreateOrderRequestDto;
+import com.EndavaTicketManagement.practica.service.modelDTO.CreateOrderResponseDto;
 import com.EndavaTicketManagement.practica.service.modelDTO.OrderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,18 +28,17 @@ import java.util.List;
     }
 
     @RequestMapping(value = "/all",
-            produces = {"application/json"},
-            consumes = {"application/json"},
             method = RequestMethod.GET)
     public List<OrderDto> getOrders() {
 
         return orderService.getOrders();
     }
-    @PostMapping(value = "/create", produces = {"application/json"},
-            consumes = {"application/json"})
-    public ResponseEntity<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
-        OrderDto createdOrder = orderService.createOrder(orderDto);
-        return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
+
+    @PostMapping(value = "/create", produces = {"application/json"}, consumes = {"application/json"})
+    public ResponseEntity<CreateOrderResponseDto> createOrder(@RequestBody CreateOrderRequestDto requestDto) {
+        CreateOrderResponseDto createdOrderResponse = orderService.createOrder(requestDto);
+        return new ResponseEntity<>(createdOrderResponse, HttpStatus.CREATED);
     }
-    }
+}
+
 

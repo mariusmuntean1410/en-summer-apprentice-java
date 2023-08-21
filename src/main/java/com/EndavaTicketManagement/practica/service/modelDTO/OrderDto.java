@@ -1,26 +1,29 @@
 package com.EndavaTicketManagement.practica.service.modelDTO;
 
 import com.EndavaTicketManagement.practica.repository.model.Customer;
+import com.EndavaTicketManagement.practica.repository.model.Event;
 import com.EndavaTicketManagement.practica.repository.model.TicketCategory;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @JsonSerialize
 public class OrderDto {
 
     private int orderId;
+    private List<TicketCategoryDto> ticketCategories;
+    private int eventId;
 
+    public List<TicketCategoryDto> getTicketCategories() {
+        return ticketCategories;
+    }
 
-    private int customerId;
-
-
-    private int ticketCategoryId;
-
-
-
-    private int numberOfTickets;
+    public void setTicketCategories(List<TicketCategoryDto> ticketCategories) {
+        this.ticketCategories = ticketCategories;
+    }
 
     public int getEventId() {
         return eventId;
@@ -30,9 +33,20 @@ public class OrderDto {
         this.eventId = eventId;
     }
 
-    private int eventId;
+    private String customerName;
 
-    private Date orderedAt;
+
+    private String ticketCategoryDescription;
+
+
+
+    private int numberOfTickets;
+
+
+
+
+
+    private LocalDateTime orderedAt;
 
     private double totalPrice;
 
@@ -49,20 +63,24 @@ public class OrderDto {
     }
 
 
-    public int getCustomerId() {
-        return customerId;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public int getTicketCategoryId() {
-        return ticketCategoryId;
+    public String getTicketCategoryDescription() {
+        return ticketCategoryDescription;
     }
 
-    public void setTicketCategoryId(int ticketCategoryId) {
-        this.ticketCategoryId = ticketCategoryId;
+
+
+
+
+    public void setTicketCategoryDescription(String ticketCategoryDescription) {
+        this.ticketCategoryDescription = ticketCategoryDescription;
     }
 
     public int getNumberOfTickets() {
@@ -73,11 +91,11 @@ public class OrderDto {
         this.numberOfTickets = numberOfTickets;
     }
 
-    public Date getOrderedAt() {
+    public LocalDateTime getOrderedAt() {
         return orderedAt;
     }
 
-    public void setOrderedAt(Date orderedAt) {
+    public void setOrderedAt(LocalDateTime orderedAt) {
         this.orderedAt = orderedAt;
     }
 
@@ -89,14 +107,15 @@ public class OrderDto {
         this.totalPrice = totalPrice;
     }
 
-    public OrderDto(int orderId, Customer customerId, TicketCategory ticketCategoryId,
-                    int numberOfTickets, Date orderedAt, double totalPrice) {
+
+    public OrderDto(int orderId, List<TicketCategoryDto> ticketCategories, int eventId, String customerName, String ticketCategoryDescription, int numberOfTickets, LocalDateTime orderedAt, double totalPrice) {
         this.orderId = orderId;
+        this.ticketCategories = ticketCategories;
+        this.eventId = eventId;
+        this.customerName = customerName;
+        this.ticketCategoryDescription = ticketCategoryDescription;
         this.numberOfTickets = numberOfTickets;
         this.orderedAt = orderedAt;
         this.totalPrice = totalPrice;
     }
-
-
-
 }

@@ -4,6 +4,7 @@ package com.EndavaTicketManagement.practica.repository.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import org.springframework.cglib.core.Local;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -25,7 +26,7 @@ public class Order implements Serializable {
     @JoinColumn(name = "ticketCategoryID")
     private TicketCategory ticketCategory;
   @Column(name = "orderedAt")
-  private Date orderedAt;
+  private LocalDateTime orderedAt;
 
   @Column(name = "numberOfTickets")
   private int numberOfTickets;
@@ -54,11 +55,11 @@ public class Order implements Serializable {
         this.ticketCategory = ticketCategory;
     }
 
-    public  Date getOrderedAt() {
+    public  LocalDateTime getOrderedAt() {
         return orderedAt;
     }
 
-    public void setOrderedAt(Date orderedAt) {
+    public void setOrderedAt(LocalDateTime orderedAt) {
         this.orderedAt = orderedAt;
     }
 

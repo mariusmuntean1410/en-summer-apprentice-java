@@ -115,7 +115,7 @@ private String eventName;
         this.ticketCategories = ticketCategories;
     }
 
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "eventId", cascade = CascadeType.ALL)
     private List<TicketCategory> ticketCategories;
 
 

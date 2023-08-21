@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class TicketCategorytoTicketCategoryDtoMapper {
 
-    public static TicketCategory convert(TicketCategoryDto ticketCategoryDto) {
-        TicketCategory ticketCategory = new TicketCategory();
-        ticketCategory.setTicketCategoryId(ticketCategoryDto.getTicketCategoryId());
-        ticketCategory.setDescription(ticketCategoryDto.getDescription());
-        ticketCategory.setPrice(ticketCategoryDto.getPrice());
-        return ticketCategory;
+    public static TicketCategoryDto convert(TicketCategory ticketCategory) {
+        TicketCategoryDto ticketCategoryDto = new TicketCategoryDto();
+        ticketCategoryDto.setTicketCategoryId(ticketCategory.getTicketCategoryId());
+        ticketCategoryDto.setDescription(ticketCategory.getDescription());
+        ticketCategoryDto.setPrice(ticketCategory.getPrice());
+        return ticketCategoryDto;
     }
+
 
 }

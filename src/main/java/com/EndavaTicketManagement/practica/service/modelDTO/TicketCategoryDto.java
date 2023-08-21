@@ -4,7 +4,15 @@ public class TicketCategoryDto {
     private int ticketCategoryId;
     private String description;
     private double price;
+    private int eventId;
 
+    public int getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
+    }
     public TicketCategoryDto() {
     }
 
